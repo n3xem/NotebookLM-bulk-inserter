@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>NotebookLM BulkInserter</title>
+    <style>
+        body {
+            width: 350px;
+            font-family: Arial, sans-serif;
+            padding: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+            resize: vertical;
+        }
+
+        .strings-container {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .string-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .string-item:last-child {
+            border-bottom: none;
+        }
+
+        .string-text {
+            word-break: break-all;
+            flex-grow: 1;
+        }
+
+        .remove-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #clearBtn {
+            background-color: #f44336;
+        }
+
+        .notebook-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ccc;
+        }
+
+        #notebookBtn {
+            background-color: #2196F3;
+            width: 100%;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>NotebookLM BulkInserter</h2>
+    <p>登録するURL・テキストを入力してください（改行区切りで複数登録可能）</p>
+    <textarea id="inputStrings"
+        placeholder="https://example.com/article1&#10;https://example.com/article2&#10;テキスト内容"></textarea>
+    <div class="button-container">
+        <button id="addBtn">追加</button>
+        <button id="clearBtn">すべて削除</button>
+    </div>
+    <h3>登録済みアイテム</h3>
+    <div id="stringsContainer" class="strings-container">
+        <!-- 登録されたアイテムがここに表示されます -->
+    </div>
+
+    <div class="notebook-section">
+        <h3>NotebookLM挿入機能</h3>
+        <p>NotebookLMでこのボタンをクリックすると、登録したURLを自動でソースとして追加します</p>
+        <button id="notebookBtn">NotebookLMで自動挿入を開始</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

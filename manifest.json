@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "NotebookLM BulkInserter",
+  "version": "1.0",
+  "description": "NotebookLM用の複数URL・テキストを一括登録・挿入するための拡張機能",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["contextMenus", "storage", "activeTab", "scripting", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
