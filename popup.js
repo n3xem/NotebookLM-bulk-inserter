@@ -81,9 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           }
         );
-
-        // ポップアップを閉じる
-        window.close();
       } else {
         console.log("NotebookLMページではありません");
         alert("このボタンはNotebookLMのページでのみ使用できます。");
